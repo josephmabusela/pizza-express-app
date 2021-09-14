@@ -1,0 +1,49 @@
+
+<div>
+    Cart Total
+
+    <form action="/cart" method="POST">
+        <div class="counter" >
+            {{counter}}
+        </div>    
+        <input type="submit" value="Checkout">
+    
+    </form>
+
+    <form action="/order-pizza" method="POST">
+    
+        <section id="section-b" class="grid">
+            <ul>
+                <li>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Large Pizza</h3>
+                            <input type="submit" name="order" value="Place Order">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Medium Pizza</h3>
+                            <input type="submit" name="order" value="Place Order">
+                        </div>
+                    </div>
+                </li>
+                <li>
+                    <div class="card">
+                        <div class="card-content">
+                            <h3 class="card-title">Small Pizza</h3>
+                            <input type="submit" name="order" value="Place Order">
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </section>
+    </form>
+    <footer id="main-footer" class="grid">
+        <div class="my-arrow-div text-center">
+           <h2>Pizza In A Flash</h2>
+        </div>
+    </footer>
+</div>
