@@ -1,39 +1,35 @@
 module.exports = function PizzaCart() {
-    var large = 0;
-    var medium = 0;
-    var small = 0;
+    var large =  "R" + 90.00;
+    var medium =  "R" + 55.00;
+    var small = "R" + 35.00;
     var totals = 0;
    
 
 
     function pizzaChoice(option){
         if(option == 'large'){
-            large += 90.00;
-            totals += 90.00;
+            large += Number(option.large);
+            totals += large;
            
         }
         else if (option == 'medium'){
-         medium += 55.00;
-         totals += 55.00;
+         medium += Number(option.medium);
+         totals += medium;
         }
         else if (option == 'small'){
-            small += 35.00;
-            totals += 35.00;
+            small += Number(option.small);
+            totals += small;
         }
 
     }
 
-    function largeTotal(){
-        return 'R' + large;
+    function getChoice() {
+        return {
+            large,
+            medium,
+            small
+        }
 
-    }
-
-    function mediumTotal(){
-        return 'R' + medium;
-    }
-
-    function smallTotal(){
-        return 'R' + small;
     }
 
     function cartTotal(){
@@ -44,9 +40,7 @@ module.exports = function PizzaCart() {
     return { 
        
         pizzaChoice,  
-        largeTotal,
-        mediumTotal,
-        smallTotal,
+        getChoice,
         cartTotal,
     
     }

@@ -1,5 +1,6 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const bodyParser = require('body-parser');
 const PizzaCart = require('./pizza-cart');
 
 const app = express();
@@ -13,31 +14,39 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static('public'));
 
 // add more middleware to allow for templating support
-
-app.engine('handlebars', exphbs());
+app.engine('handlebars', exphbs({layoutsDir: 'views/layouts/'}));
 app.set('view engine', 'handlebars');
 
+// parse application in ->/x-www-form-urlencoded
+app.use(bodyParser.urlencoded({ extended: false}));
+
+// parse application in -> / json
+app.use(bodyParser.json());
 
 app.get('/', function(req, res) {
 	res.render('index', {
 
-		large: pizzaCart.largeTotal(),
-		medium: pizzaCart.mediumTotal(),
-		small: pizzaCart.smallTotal()
+		choices: pizzaCart.getChoice(),
+		cartTotal: pizzaCart.cartTotal()
 	});
 });
 
 app.post('/cart', function(req, res) {
-	counter++;
+		pizzaCart.pizzaChoice({
+		large: req.body.large,
+		medium: req.body.medium,
+		small: req.body.small,
+	});
 	res.redirect('/')
 });
 
 app.post('/order-pizza', function(req, res) {
-	let price = req.body.price;
-	currentPrice = price;
-	res.render('index', {
-		currentPrice
+	pizzaCart.pizzaChoice({
+		large: req.body.large,
+		medium: req.body.medium,
+		small: req.body.small,
 	});
+	res.redirect('/')
 })
 
 const PORT =  process.env.PORT || 3017;

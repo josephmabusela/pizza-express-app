@@ -4,7 +4,9 @@
 
     <form action="/cart" method="POST">
         <div class="cart" >
-            {{counter}}
+            {{cartTotal.large}}
+            {{cartTotal.medium}}
+            {{cartTotal.small}}
             <div>
                 <input type="submit" value="Checkout"> 
             </div>  
@@ -19,7 +21,7 @@
                     <div class="card">
                         <div class="card-content">
                             <h3>Large Pizza</h3>
-                            <input type="submit" name="order" value="large">
+                            <input type="submit" name="large" placeholder="R90.00" step=".01" value="{{choices.large}}">
                             <span>Place Order</span>
                         </div>
                     </div>
@@ -28,7 +30,7 @@
                     <div class="card">
                         <div class="card-content">
                             <h3>Medium Pizza</h3>
-                            <input type="submit" name="order" value="medium">
+                            <input type="submit" name="medium" placeholder="R55.00" step=".01" value="{{choices.medium}}">
                             <span>Place Order</span>
                         </div>
                     </div>
@@ -37,7 +39,7 @@
                     <div class="card">
                         <div class="card-content">
                             <h3>Small Pizza</h3>
-                            <input type="submit" name="order" value="small">
+                            <input type="submit" name="small" placeholder="R35.00" step=".01" value="{{choices.small}}">
                             <span>Place Order</span>
                         </div>
                     </div>
