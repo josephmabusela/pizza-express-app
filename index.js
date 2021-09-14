@@ -1,7 +1,9 @@
 const express = require('express');
 const exphbs  = require('express-handlebars');
+const PizzaCart = require('./pizza-cart');
 
 const app = express();
+const pizzaCart = PizzaCart();
 
 // enable the req.body object - to allow us to use HTML forms
 app.use(express.json());
@@ -15,13 +17,13 @@ app.use(express.static('public'));
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
-let counter = 0;
-let currentCartTotal = 0;
-let currentPrice = 0;
 
 app.get('/', function(req, res) {
 	res.render('index', {
-		counter
+
+		large: pizzaCart.largeTotal(),
+		medium: pizzaCart.mediumTotal(),
+		small: pizzaCart.smallTotal()
 	});
 });
 

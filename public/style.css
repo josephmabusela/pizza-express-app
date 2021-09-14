@@ -1,28 +1,20 @@
+
 body {
-	background-color: greenyellow;
+	background-color: #CACACA;
 	font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
-.container {
-	margin: auto;
-	background-color: honeydew;
-	width: 80%;
+h1, h2, h3 {
 	padding: 1em;
-}
-
-
-.counter {
-	background-color: lightgray;
-	font-size: 2em;
-	width: 3em;
 	text-align: center;
-	padding: 0.5em;
-	margin-bottom: 0.25em;
 }
 
-#section-b a {
-    text-decoration: none;
+.cart {
+	padding: 2em;
+	background-color: #616161;
+	align-items: flex-start;
 }
+
 #section-b {
     padding: 2em 1em 1em;
 }
@@ -45,36 +37,15 @@ body {
 
 #main-footer {
     padding:2em;
-    background: #000;
-    color: #fff;
-    text-align: center;
+    background: #1c1a1a;
+    color: #cacaca;
+	align-items: center;
 }
 
 
 /*Media Queries*/
 
 @media(min-width: 700px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 1fr repeat(2, minmax(auto, 25em)) 1fr;
-    }
-
-    #section-a, .content-text {
-        columns: 2;
-        column-gap: 2em;
-    }
-
-    #section-a, .content-text p {
-        padding-top: 0;
-    }
-
-    .content-wrap, #section-b ul {
-        grid-column: 2/4;
-    }
-
-    .box, #main-footer div {
-        grid-column: span 2;
-    }
 
     #section-b ul {
         display: flex;

@@ -3,47 +3,51 @@
     Cart Total
 
     <form action="/cart" method="POST">
-        <div class="counter" >
+        <div class="cart" >
             {{counter}}
+            <div>
+                <input type="submit" value="Checkout"> 
+            </div>  
         </div>    
-        <input type="submit" value="Checkout">
-    
     </form>
 
     <form action="/order-pizza" method="POST">
-    
+        <h2>Choose from our variety below</h2>
         <section id="section-b" class="grid">
             <ul>
                 <li>
                     <div class="card">
                         <div class="card-content">
-                            <h3 class="card-title">Large Pizza</h3>
-                            <input type="submit" name="order" value="Place Order">
+                            <h3>Large Pizza</h3>
+                            <input type="submit" name="order" value="large">
+                            <span>Place Order</span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="card">
                         <div class="card-content">
-                            <h3 class="card-title">Medium Pizza</h3>
-                            <input type="submit" name="order" value="Place Order">
+                            <h3>Medium Pizza</h3>
+                            <input type="submit" name="order" value="medium">
+                            <span>Place Order</span>
                         </div>
                     </div>
                 </li>
                 <li>
                     <div class="card">
                         <div class="card-content">
-                            <h3 class="card-title">Small Pizza</h3>
-                            <input type="submit" name="order" value="Place Order">
+                            <h3>Small Pizza</h3>
+                            <input type="submit" name="order" value="small">
+                            <span>Place Order</span>
                         </div>
                     </div>
                 </li>
             </ul>
         </section>
     </form>
-    <footer id="main-footer" class="grid">
-        <div class="my-arrow-div text-center">
-           <h2>Pizza In A Flash</h2>
+    <footer id="main-footer">
+        <div>
+           <h2>Zandile's Pizza Shop</h2>
         </div>
     </footer>
 </div>
