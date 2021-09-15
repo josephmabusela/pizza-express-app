@@ -49,8 +49,8 @@ app.post('/order-pizza', function(req, res) {
 	res.redirect('/')
 })
 
-const PORT =  process.env.PORT || 3017;
-// start  the server and start listening for HTTP request on the PORT number specified...
-app.listen(PORT, function(){
-	console.log('App starting on port', PORT);
-});
+const PORT = process.env.PORT || 3011;
+
+app.listen(PORT, function() {
+  console.log("App started at PORT: ", PORT)
+})
